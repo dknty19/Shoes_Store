@@ -29,37 +29,6 @@ class Product {
         $this->name = $name;
         $this->image_url = $image_url;
     }
-    function getCategory_id() {
-        return $this->category_id;
-    }
-
-    function setCategory_id($category_id) {
-        $this->category_id = $category_id;
-    }
-
-    function getIs_featured() {
-        return $this->is_featured;
-    }
-
-    function setIs_featured($is_featured) {
-        $this->is_featured = $is_featured;
-    }
-
-    function getEntered_date() {
-        return $this->entered_date;
-    }
-
-    function setEntered_date($entered_date) {
-        $this->entered_date = $entered_date;
-    }
-
-    function getImage_url() {
-        return $this->image_url;
-    }
-
-    function setImage_url($image_url) {
-        $this->image_url = $image_url;
-    }
 
     function getProduct_id() {
         return $this->product_id;
@@ -91,6 +60,22 @@ class Product {
 
     function getStatus() {
         return $this->status;
+    }
+
+    function getImage_url() {
+        return $this->image_url;
+    }
+
+    function getEntered_date() {
+        return $this->entered_date;
+    }
+
+    function getIs_featured() {
+        return $this->is_featured;
+    }
+
+    function getCategory_id() {
+        return $this->category_id;
     }
 
     function setProduct_id($product_id) {
@@ -125,4 +110,21 @@ class Product {
         $this->status = $status;
     }
 
-}
+    function setImage_url($image_url) {
+        $this->image_url = $image_url;
+    }
+
+    function setEntered_date($entered_date) {
+        $this->entered_date = $entered_date;
+    }
+
+    function setIs_featured($is_featured) {
+        $this->is_featured = $is_featured;
+    }
+
+    function setCategory_id($category_id) {
+        $this->category_id = $category_id;
+    }
+
+
+    }

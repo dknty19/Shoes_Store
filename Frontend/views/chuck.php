@@ -95,9 +95,9 @@
                                 <li><a href="about.php">About</a></li>
                                 <li class="dropdown"><a href="#">Category<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="index.php?action=category_id=1">Chuck II</a></li>
-                                        <li><a href="index.php?action=category_id=3">Sneaker</a></li>
-                                        <li><a href="index.php?action=category_id=4">Classic </a></li>
+                                        <li><a href="index.php?action=category_id=1"> Chuck II</a></li>
+                                        <li><a href="index.php?action=category_id=3"> Sneaker</a></li>
+                                        <li><a href="index.php?action=category_id=4"> Classic</a></li>
                                         <li><a href="index.php?action=category_id=5"> Chuck II Shield Canvas</a></li>
                                         <li><a href="index.php?action=category_id=6"> Chuck II Spacer Mash</a></li>
                                         <li><a href="index.php?action=category_id=9"> Rubber</a></li>
@@ -196,10 +196,7 @@
                                             <div class="container">
                                                 <div class="row">
                                                     <div class="col-sm-9 padding-right">
-                                                        <!-- Featured Items -->
-                                                        <?php include 'products/featured_products.php'; ?>
-                                                        <!--New Items-->
-                                                        <?php include 'products/new_products.php'; ?>
+                                                        <?php include 'products/chuck_category.php'; ?>
                                                         <div class="category-tab"><!--category-tab-->
                                                             <div class="col-sm-12">
                                                                 <ul class="nav nav-tabs">

@@ -9,31 +9,21 @@
             <div class="single-products">
                 <div class="productinfo text-center">
                     <?php if (empty($row['image_url'])): ?>
-                    <img src="../common/images/home/gallery2.jpg" alt="" />
+                        <img src="" alt="" />
                     <?php else: ?>
-                        <img src="<?= $row['image_url'] ?>" alt="" />
+                        <a href="index.php?action=product_detail&product_id=<?= $row['product_id'] ?>"><img src="<?= $row['image_url'] ?>" alt="" /></a>
+                        <input type="hidden" name="product_id" value="<?=$row['product_id']?>">
                     <?php endif; ?>
                     <h2>$<?= $row['unit_price'] ?></h2>
                     <p><?= $row['name'] ?></p>
-                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                    <a href="index.php?action=order_add&product_id=<?=$row['product_id']?>"
+                             class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                 </div>
-                <div class="product-overlay">
-                    <div class="overlay-content">
-                        <p><?= $row['name'] ?></p>
-                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                    </div>
-                </div>
-                <?php if ($row['status']=='new'): ?>
+                <?php if ($row['status']=='New'): ?>
                 <img src="common/images/home/new.png" class="new" alt="">
                 <?php elseif ($row['status']=='Sale'): ?>
                 <img src="common/images/home/sale.png" class="new" alt="">
                 <?php endif; ?>
-            </div>
-            <div class="choose">
-                <ul class="nav nav-pills nav-justified">
-                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-                    <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
-                </ul>
             </div>
         </div>
     </div>

@@ -63,17 +63,18 @@
                         </div>
                         <div class="col-md-8" style="padding-top: 20px"><!--login-->
                             <div class="shop-menu pull-right">
-                                <ul class="nav navbar-nav">
-                                    <form name="loginform" action="index.php" method="post" onsubmit="return(validate())">
-                                        <input type="hidden" name="action" value="login">
-                                        <input type="text" name="username" placeholder="Username"> 
-                                        <input type="password" name ="password" placeholder="Password">
-                                        <input type="submit" name="submit" value="Login">
-                                    </form>
-                                    <li><a href="register.html"><i class="fa fa-registered"></i> Register</a></li>
-                                    <li><a href="#"><i class="fa fa-question"></i>Forgot your password?</a></li>
+                                <ul class="short-username">
+                                    <li style="padding-right: 5px"><span>Chào,</span></li>
+                                    <li style="padding-left: 0; text-transform: uppercase"><span><?=$crow['username']?></span></li>
+                                    <input type="hidden" name="username" value="<?=$crow['username']?>">
                                     <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
                                 </ul>
+                                <div style="padding-left: 70px">
+                                <form action="index.php" method="post" >
+                                    <input type="hidden" name="action" value="logout">
+                                    <input type="submit" name="logout" value="Logout">
+                                </form>
+                                </div>
                             </div>
                         </div><!--login-->
 
@@ -95,9 +96,9 @@
                                 <li><a href="about.php">About</a></li>
                                 <li class="dropdown"><a href="#">Category<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="index.php?action=category_id=1">Chuck II</a></li>
-                                        <li><a href="index.php?action=category_id=3">Sneaker</a></li>
-                                        <li><a href="index.php?action=category_id=4">Classic </a></li>
+                                        <li><a href="index.php?action=category_id=1"> Chuck II</a></li>
+                                        <li><a href="index.php?action=category_id=3"> Sneaker</a></li>
+                                        <li><a href="index.php?action=category_id=4"> Classic</a></li>
                                         <li><a href="index.php?action=category_id=5"> Chuck II Shield Canvas</a></li>
                                         <li><a href="index.php?action=category_id=6"> Chuck II Spacer Mash</a></li>
                                         <li><a href="index.php?action=category_id=9"> Rubber</a></li>
@@ -197,9 +198,9 @@
                                                 <div class="row">
                                                     <div class="col-sm-9 padding-right">
                                                         <!-- Featured Items -->
-                                                        <?php include 'products/featured_products.php'; ?>
+                                                        <?php include './views/login/featured_products_login.php'; ?>
                                                         <!--New Items-->
-                                                        <?php include 'products/new_products.php'; ?>
+                                                        <?php include './views/login/new_products_login.php'; ?>
                                                         <div class="category-tab"><!--category-tab-->
                                                             <div class="col-sm-12">
                                                                 <ul class="nav nav-tabs">
@@ -767,19 +768,5 @@
 <script src="common/js/price-range.js"></script>
 <script src="common/js/jquery.prettyPhoto.js"></script>
 <script src="common/js/main.js"></script>
-<script type="text/javascript">
-    function validate(){
-    if(document.loginform.username.value ===""){
-        alert("enter your username");
-        document.loginform.username.focus();
-        return false;
-    }if(document.loginform.password.value ===""){
-        alert("enter your password");
-        document.loginform.password.focus();
-        return false;
-    }
-    return true;
-}
-</script>   
 
 </html>

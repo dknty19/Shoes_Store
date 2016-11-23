@@ -1,14 +1,15 @@
-<div class="new_items"><!-- new_items-->
-    <h2 class="title text-center">New Items</h2>
+<div class="features_items"><!-- new_items-->
+    
+    <h2 class="title text-center"><?=$crow['name']?></h2>
     <?php 
-    if (isset($new_products)):
-        foreach ($new_products as $row):    
+    if (isset($result)):
+        foreach ($result as $row):    
     ?>
     <div class="col-sm-4">
         <div class="product-image-wrapper">
             <div class="single-products">
                 <div class="productinfo text-center">
-                    <?php if (empty($row['image_url'])): ?>
+                   <?php if (empty($row['image_url'])): ?>
                         <img src="" alt="" />
                     <?php else: ?>
                         <a href="index.php?action=product_detail&product_id=<?= $row['product_id'] ?>"><img src="<?= $row['image_url'] ?>" alt="" /></a>
@@ -16,8 +17,8 @@
                     <?php endif; ?>
                     <h2>$<?= $row['unit_price'] ?></h2>
                     <p><?= $row['name'] ?></p>
-<!--                    <a href="index.php?action=order_add&product_id=<?=$row['product_id']?>"
-                             class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>-->
+                    <a href="index.php?action=order_add&product_id=<?=$row['product_id']?>"
+                             class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                 </div>
                 <?php if ($row['status']=='New'): ?>
                 <img src="common/images/home/new.png" class="new" alt="">
